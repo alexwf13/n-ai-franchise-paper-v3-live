@@ -42,6 +42,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: var(--body);
   font-size: 16px;
   line-height: 1.6;
@@ -771,6 +772,10 @@ th.ctable__ours { color: var(--accent-deep) !important; }
   color: var(--ink-40);
   margin-bottom: 16px;
 }
+.equipment__table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+}
 .etable {
   width: 100%;
   border-collapse: collapse;
@@ -1455,7 +1460,7 @@ th.ctable__ours { color: var(--accent-deep) !important; }
 
 @media (max-width: 960px) {
   .nav__links { display: none; }
-  .nav__burger { display: flex; }
+  .nav__burger { display: flex; margin-right: 0; }
   .hero__main { grid-template-columns: 1fr; gap: 60px; }
   .hero__h1 { font-size: clamp(2.8rem, 8vw, 5rem); }
   .hero__badge { bottom: -24px; right: 0; width: 110px; height: 110px; }
@@ -1506,6 +1511,24 @@ th.ctable__ours { color: var(--accent-deep) !important; }
 }
 
 @media (max-width: 480px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .nav__burger {
+    margin-right: -8px;
+  }
+
+  .equipment__table-wrap {
+    width: 100%;
+  }
+
+  .etable {
+    min-width: 460px;
+  }
+
   .hero__h1 { font-size: 2.6rem; }
   .pkg-card__header { padding: 24px 22px 18px; }
   .pkg-card__desc,
